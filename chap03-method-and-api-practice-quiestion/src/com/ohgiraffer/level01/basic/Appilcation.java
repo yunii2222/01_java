@@ -22,9 +22,6 @@ public class Appilcation {
             //sum += i; 로도 사용가능
             // sum이 i씩 증가하며 리턴
             sum = sum + i;
-
-
-
         }
         System.out.println("1부터 10까지의 합 : " + sum );
 
