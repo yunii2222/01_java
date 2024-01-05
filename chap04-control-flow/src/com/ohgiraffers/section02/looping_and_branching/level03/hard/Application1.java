@@ -28,14 +28,16 @@ public class Application1 {
         do {
             System.out.print( " 2보다 큰 정수를 하나 입력하세요 : " );
             num = sc.nextInt();
-            if (num % i == 0) {
-                System.out.println( " 소수다 " );
-            } else if (num < i){
+            if (num < 2) {
                 System.out.println( " 잘못 입력하셨습니다. 다시 입력하세요." );
+            } else if (!(num % i == 0)){
+                //break를 넣음으로써 2보다 큰 소수가 입력되면 소수다 라는 결과와 함께 멈춤.
+                System.out.println( " 소수다 " ); break;
+            } else {
+                System.out.println( " 소수가 아니다. " );
             }
-        }while(!(num % i == 0) );
-        System.out.println( " 소수가 아니다. " );
-
+            // 2보다 큰 소수를 출력해야 하므로 2보다 큰 소수가 아니면 반복한다.
+        }while(num % i == 0);
 
     }
 

@@ -1,5 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application3 {
     public static void main(String[] args) {
         /* 문자열을 하나 입력 받고, 검색할 문자를 입력 하여
@@ -28,5 +30,25 @@ public class Application3 {
          * -- 출력 예시 --
          * 영문자가 아닌 문자가 포함되어 있습니다.
          * */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print( " 문자열 입력 : " );
+        String str = sc.nextLine();
+
+        System.out.print( " 문자 입력 : " );
+        char ch = sc.next().charAt(0);
+//      char ch1 = (char)sc.nextInt();
+
+        //입력한 문자열에서 입력한 문자가 몇번 나오는지의 초기값 설정
+        int count = 0;
+
+        sc.close();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ch) {
+                count++;
+            }
+        }
+        System.out.println("입력한 문자열에서 '" + ch + "'의 개수 : " + count );
     }
 }
