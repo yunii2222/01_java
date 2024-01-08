@@ -1,5 +1,6 @@
 package com.ohgiraffers.section02.demensional_array.level01.level03.hard;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Application1 {
@@ -24,17 +25,34 @@ public class Application1 {
          * W S S J
          * */
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println( " 가로 행의 수를 입력하세요 : " );
-        int garo = sc.nextInt();
 
-        System.out.println( " 세로 열의 수를 입력하세요 : " );
-        int searo = sc.nextInt();
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("가로 행의 수를 입력하세요 : ");
+            int first = sc.nextInt();
+            System.out.println("세로 열의 수를 입력하세요 : ");
+            int second = sc.nextInt();
 
-        int[][] arr = new int[5][4];
-        char ch = (char) (Math.random() * arr.length) ;
+            int[][] arr = new int[5][4];
+            Random random = new Random();
 
-        System.out.println();
+            //행에 대해 반복하는
+            if ( first < 10 && second< 10 ) {
+                for(int i = 0; i < arr.length; i++){
+                    //열에 대해 반복하는
+                    for(int j = 0; j < arr[i].length; j++){
+                        char ch = (char) (random.nextInt(26) + 'A');
+                        System.out.print(ch + " ");
+                    }
+                    System.out.println();
+                }
+                break;
+            }else {
+                System.out.println("반드시 1~10까지의 정수를 입력해야 합니다. 다시 입력하세요.");
+            }
+        }
 
     }
+
 }
+

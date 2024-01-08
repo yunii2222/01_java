@@ -27,16 +27,26 @@ public class Application1 {
         System.out.println( " 홀수인 양의 정수를 입력하세요 : " );
         int num = sc.nextInt();
 
-        int[] arr1 = new int[num];
+        if ( num % 2 == 1 ) {
+            int[] arr1 = new int[num];
+            /* 나누기한 값이 소수점이기때문에 int를 앞에 넣어주었다.
+            * ex) 7 / 2 = 3.5 (3)  */
+            int middle = (int) (num / 2 + 1);
+            int total = 0;
 
-        int middle = num / 2;
+            for ( int i = 0; i < middle; i++ ) {
+                arr1[i] = ++total;
+            }
+            for ( int i = 0; i < arr1.length; i++ ) {
+                arr1[i] = --total;
+            }
 
-        int total = 0;
+            for ( int i = 0; i < arr1.length; i++ ) {
+                System.out.print( arr1[i] + " " );
+            }
 
-        if ( num % 2 == 0 ) {
+        } else {
             System.out.println(" 양수 혹은 홀수만 입력해야 합니다. ");
-        } else if ( num < middle ) {
-            total--;
         }
 
     }
