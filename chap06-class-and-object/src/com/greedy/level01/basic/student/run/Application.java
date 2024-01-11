@@ -13,7 +13,7 @@ public class Application {
         int count = 0;
 
 
-        while ( !(count >= 1 && count <= 10) ) {
+        while ( true ) {
             for ( int i = 0; i < studentDTOS.length; i++ ) {
 
                 System.out.print("학년 : ");
@@ -35,21 +35,22 @@ public class Application {
                 System.out.print("수학점수 : ");
                 int math = sc.nextInt();
 
+                /* 사용자 입력을 사용하여 StudentDTO 객체를 만들고 이를 배열에 저장하는 루프의 일부입니다.
+                count 변수는 추가된 학생의 수를 추적하며, 각 추가 후에 증가하여 다음 학생이 배열의 다음
+                사용 가능한 위치에 추가되도록 합니다. */
                 studentDTOS[count] = new StudentDTO(grade, classroom, name, kor, eng, math);
-                count++;
                 System.out.print("계속 추가할 겁니까 ? (y/n) : ");
                 char str = sc.next().charAt(0);
                 sc.nextLine();
 
-                for ( int j = 0; j < count; j++ ) {
-                    if (str == 'y') {
-                        System.out.println("ff");
-                    }else if ( str == 'n'){
-                        System.out.println(studentDTOS[i].getInformation());
-                        continue;
-                    }
+                if ( str == 'n' || str == 'N') {
+                    break;
                 }
+                count++;
             }
+            for (int j = 0; j < count+1; j++) {
+                System.out.println(studentDTOS[j].getInformation());
+            }return;
         }
     }
 }

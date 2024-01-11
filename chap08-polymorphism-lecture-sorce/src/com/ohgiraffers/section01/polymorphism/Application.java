@@ -85,7 +85,7 @@ public class Application {
         * down-casting : 하위 타입으로 형변환(명시적 형변환) */
 
         Animal animal1 = (Animal) new Rabbit();  // up-casting
-        Animal animal2 = new Rabbit();           // up-casting 묵시정 형변환 "가능"
+        Animal animal2 = new Rabbit();           // up-casting 묵시적 형변환 "가능"
 
         Rabbit rabbit1 = (Rabbit) animal1;      // down-casting
 //        Rabbit rabbit2 = (Rabbit) animal2;    // down-casting 묵시적 형변환 "불가"

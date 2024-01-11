@@ -24,6 +24,10 @@ public class StudentDTO {
                 + " 이름 : " + this.name
                 + " 국어점수 : " + this.kor
                 + " 영어점수 : " + this.eng
-                + " 수학점수 : " + this.math;
+                + " 수학점수 : " + this.math
+                + " 평균 : " + this.halfAverage();
+    }
+    public int halfAverage() {
+        return  ( kor + eng + math ) / 3;
     }
 }
