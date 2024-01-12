@@ -15,7 +15,7 @@ public abstract class Product {
 
     /* 추상클래스는 일반적인 메소드를 가질 수 있다. */
     public void nonStaticMethod() {
-        System.out.println(" Product 클래스의 nonStaticMethod 호출... ");
+        System.out.println(" Product 클래스의   nonStaticMethod 호출... ");
     }
     public void staticMethod() {
         System.out.println(" Product 클래스의 staticMethod 호출... ");
