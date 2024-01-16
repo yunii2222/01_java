@@ -1,9 +1,6 @@
 package com.ohgiraffers.section01.List.run;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Application1 {
     public static void main(String[] args) {
@@ -59,6 +56,14 @@ public class Application1 {
         alt.remove(2);
         System.out.println("alt.remove : " + alt);
 
+        /*  Collection을 사용해서 여러 요소를 삭제하고 싶을 때는 removeAll()  메소드 사용
+        *   .asList(삭제하고싶은 요소, 삭제하고싶은 요소) */
+        List<String> elementsToRemoveStr = new ArrayList<>(Arrays.asList("banana", "orange"));
+        List<Integer> elementsToRemoveInt = new ArrayList<>(Arrays.asList(2,5));
+
+        alt.removeAll(elementsToRemoveStr);
+        System.out.println("alt.elementsToRemoveStr : " + alt);
+
         /* 첫번째 인덱스를 true로 수정가능
         * banana -> true로 변경 */
         alt.set(1,true);
@@ -88,5 +93,6 @@ public class Application1 {
 
         /* sort 메소드를 사용하면 리스트가 오른차순(a,b,c... ㄱ,ㄴ,ㄷ...) 정렬 된 후 정렬 상태가 유지된다. */
         System.out.println( "stringList :" + stringList );
+
     }
 }

@@ -1,0 +1,57 @@
+package com.ohgiraffers.section04.uses;
+
+public class MusicDTO {
+
+    /* 1로 초기화 */
+    private static int nextId = 1;
+
+    private int id;
+    private String artist;
+    private String title;
+
+    public MusicDTO(String artist, String title) {
+        /* 객체가 생성 될때 마다 객체 구분을 위해 각각 인덱스 번호 부여 */
+        this.id = MusicDTO.nextId++;
+        this.artist = artist;
+        this.title = title;
+    }
+
+    public MusicDTO(int id, String artist, String title) {
+        this.id = id;
+        this.artist = artist;
+        this.title = title;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "MusicDTO{" +
+                "id=" + id +
+                ", artist='" + artist + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
+}
